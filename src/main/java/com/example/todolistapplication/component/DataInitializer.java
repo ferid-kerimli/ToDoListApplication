@@ -46,7 +46,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Transactional
     void createUserIfNotFound(Role adminRole) {
-        Optional<User> userOpt = userRepository.findByUsername("admin");
+        Optional<User> userOpt = userRepository.findByUsernameOp("admin");
         if (userOpt.isPresent()) {
             return;
         }

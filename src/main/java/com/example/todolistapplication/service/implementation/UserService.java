@@ -123,7 +123,7 @@ public class UserService implements IUserService {
             var response = new ApiResponse<UserGetDto>();
 
             try {
-                var user = userRepository.findByUsername(username);
+                var user = userRepository.findByUsernameOp(username);
 
                 if (user.isEmpty()) {
                     response.Failure("User not found", 400);
